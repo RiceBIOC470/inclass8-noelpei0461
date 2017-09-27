@@ -34,7 +34,8 @@ figure;
 [score,align,start]=swalign(seq1,seq2,'Alphabet','nt','Showscore',true);
 % D. run swalign with much higher and lower values of the GapOpen parameter
 % and explain the results. 
-
+[score,align,start]=swalign(seq1,seq2,'Alphabet','nt','Gapopen',10,'Showscore',true)
+[score,align,start]=swalign(seq1,seq2,'Alphabet','nt','Gapopen',0.5,'Showscore',true)
 %Gap opening parameter refers to the cost that a open a gap make take. The higher the cost is, the less possible to have a great gap in the alignment. Thus the figure with higher Gapopen parameter becomes more continurosly.
 
 
