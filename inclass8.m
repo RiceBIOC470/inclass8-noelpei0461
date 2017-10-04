@@ -1,3 +1,6 @@
+%AW: looks good. see comments below. 0.95/1.
+
+
 %Inclass assignment 8
 
 %Using the swalign function
@@ -47,10 +50,16 @@ start =
      1
      1
 %Although the gapopen penalty is low, the cost for extending the alignment is too high, that the alignment gap can occur in the first pair(41), but cannot extend in the later parts.
-% F. run swalign align with the default value of GapOpen and a low value
+
+%AW: this is almost correct. The gaps will only be 1 bp long, but they don't only have to occur in the first mismatched position. There
+% can be 1 bp gaps anywhere. -0.05. 
+
+%F. run swalign align with the default value of GapOpen and a low value
 % of ExtendGap and explain the result. 
 figure;
 [score,align,start]=swalign(seq1,seq2,'Alphabet','nt','ExtendGap',1,'Showscore',true)
 
 
 % Since the gap extending penalty is low, the greater gap can occur in the graph.
+
+%AW: correct - a longer gap, but there will be fewer of them. 
